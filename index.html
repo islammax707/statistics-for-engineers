@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Statistics for Engineers</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --background-color: #0d1117;
@@ -73,6 +74,12 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         }
 
+        header .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         header h1 {
             font-size: clamp(3rem, 7vw, 5.5rem);
             font-weight: 800;
@@ -118,7 +125,6 @@
             margin-bottom: 3rem;
             position: relative;
             color: var(--primary-color);
-            animation: slideInFromLeft 1s ease-out forwards;
         }
 
         section h2::after {
@@ -131,6 +137,23 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 3px;
+        }
+
+        /* About Section with Course Thumbnail */
+        .about-course {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-course .course-thumbnail {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-out forwards;
         }
 
         /* Price Section */
@@ -147,6 +170,18 @@
             display: inline-block;
             box-shadow: 0 0 20px var(--hover-glow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .price-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .price-wrapper p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
         }
 
         /* Features Grid */
@@ -169,6 +204,12 @@
             overflow: hidden;
         }
 
+        .feature-box i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
         .feature-box::before {
             content: '';
             position: absolute;
@@ -176,118 +217,3 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
-        }
-
-        .feature-box:hover::before {
-            transform: translateX(0);
-        }
-
-        .feature-box:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 25px var(--hover-glow);
-            background-color: #1a202c;
-        }
-
-        .feature-box h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-box p {
-            color: var(--secondary-color);
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Footer Styling */
-        footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: auto;
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-            background-color: var(--card-background);
-        }
-
-        footer a {
-            color: var(--primary-color);
-            margin: 0 1.2rem;
-            text-decoration: none;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
-            text-shadow: 0 0 8px var(--primary-color);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section {
-                padding: 3rem 1rem;
-            }
-            section h2 {
-                margin-bottom: 2rem;
-            }
-            .features {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .feature-box {
-                padding: 2rem;
-            }
-            header h1 {
-                font-size: clamp(2.5rem, 8vw, 4.5rem);
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div>
-            <h1>Statistics for Engineers</h1>
-            <a href="#" class="cta-button">Buy Now</a>
-        </div>
-    </header>
-
-    <section>
-        <h2>About the Course</h2>
-        <p>This course is designed for engineering students and professionals seeking a practical approach to statistics. Learn from real-world engineering examples and apply concepts directly to your field.</p>
-        <div class="price">Course Price: $49</div>
-    </section>
-
-    <section>
-        <h2>What You'll Get</h2>
-        <div class="features">
-            <div class="feature-box">
-                <h3>Hands-On Projects</h3>
-                <p>Practice with real data and engineering cases.</p>
-            </div>
-            <div class="feature-box">
-                <h3>Instant Access</h3>
-                <p>Start learning immediately after purchase.</p>
-            </div>
-            <div class="feature-box">
-                <h3>Downloadable Resources</h3>
-                <p>Get slides, datasets, and cheat sheets.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Refund Policy</a>
-    </footer>
-</body>
-</html>
